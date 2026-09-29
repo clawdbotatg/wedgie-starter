@@ -1,0 +1,29 @@
+{
+  "apps": [
+    {
+      "mod": "dodge",
+      "name": "Dodge",
+      "about": "Dodge the falling rocks. The starter game: fork its repo and make your own.",
+      "files": [
+        "dodge/dodge.py"
+      ],
+      "entry": "run",
+      "label": "#2f7df6",
+      "icon": [
+        "............",
+        ".....kk.....",
+        "....kbbk....",
+        "....kbbk....",
+        "...kbwwbk...",
+        "..kbbwwbbk..",
+        ".kbbbbbbbbk.",
+        ".kbbkbbkbbk.",
+        "..kk.yy.kk..",
+        ".....yy.....",
+        "....r..r....",
+        "............"
+      ],
+      "fw": "0.2.3"
+    }
+  ]
+}
