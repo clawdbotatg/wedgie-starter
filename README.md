@@ -5,6 +5,10 @@ A small complete game for the [wedgie](https://wedgie.dev), and the template for
 **Dodge**: joystick left and right moves your ship; don't get hit by the falling rocks. A plays again.
 Your best score is saved (`best`).
 
+**Hi-Lo**: is the next card higher or lower? Joystick up or down. The deck is shuffled by the secure
+chip's true random generator (`wedgie.rand_below`), and the screen says which chip did it. Needs
+wedgie firmware 0.2.4. Best streak is saved (`best`).
+
 ## Play it
 
 - In the emulator: open https://wedgie.dev/code, load `clawdbotatg/wedgie-starter` (or open this folder).

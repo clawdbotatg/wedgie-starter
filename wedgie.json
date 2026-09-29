@@ -24,6 +24,31 @@
         "............"
       ],
       "fw": "0.2.3"
+    },
+    {
+      "mod": "hilo",
+      "name": "Hi-Lo",
+      "about": "Higher or lower? The deck is shuffled by the secure chip's true random generator.",
+      "files": [
+        "hilo/hilo.py"
+      ],
+      "entry": "run",
+      "fw": "0.2.4",
+      "label": "#127a3c",
+      "icon": [
+        "............",
+        ".kkkkk......",
+        ".kwwwk......",
+        ".kwrwkkkkk..",
+        ".kwwwkwwwk..",
+        ".kwwwkwkwk..",
+        ".kkkkkwwwk..",
+        ".....kwwwk..",
+        "..g..kkkkk..",
+        ".ggg.....r..",
+        "..g.....rrr.",
+        ".........r.."
+      ]
     }
   ]
 }
