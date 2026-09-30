@@ -15,6 +15,7 @@
 import time, framebuf, random
 from lcd import LCD, Keys, color
 import save
+import ui                               # the wedgie's own look: game over is ui.page (wedgie.dev/code.md)
 
 lcd = LCD()
 keys = Keys()
@@ -140,11 +141,7 @@ def game_over():
         except OSError:
             pass                        # flash full: play on without saving
     lcd.show_wait()                     # never draw while a frame is going out
-    lcd.fill_rect(20, 90, 200, 60, 0)
-    lcd.rect(20, 90, 200, 60, INK)
-    lcd.center_text("GAME OVER", 100, INK, 2)
-    lcd.center_text("A plays again", 130, DIM)
-    lcd.show()
+    ui.page(lcd, "Game over", [("score %d" % score, ui.INK), ("best %d" % best, ui.MUTED)], "A  play again")
     while "A" not in keys.pressed():
         time.sleep_ms(30)
     reset()

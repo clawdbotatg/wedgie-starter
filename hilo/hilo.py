@@ -10,6 +10,7 @@
 import time, framebuf
 from lcd import LCD, Keys, color
 import save
+import ui                               # the wedgie's own look: shuffling shows its boot bar (ui.progress)
 from wedgie import rand_below, rand_source
 
 lcd = LCD()
@@ -57,12 +58,14 @@ msg = ""
 source = ""
 
 
-def shuffle():
-    """Fisher-Yates, every swap chosen by the chip: all 52! orders equally likely."""
+def shuffle(bar=None):
+    """Fisher-Yates, every swap chosen by the chip: all 52! orders equally likely. bar: ui.progress's."""
     global pos
     for i in range(51, 0, -1):
         j = rand_below(i + 1)
         deck[i], deck[j] = deck[j], deck[i]
+        if bar and i % 6 == 0:
+            bar.to((52 - i) / 52)
     pos = 0
 
 
@@ -115,10 +118,7 @@ def draw():
 
 def new_game():
     global cur, nxt, streak, state, msg, source
-    lcd.fill(FELT)
-    lcd.center_text("shuffling...", 112, WHITE, 2)
-    lcd.show()
-    shuffle()
+    shuffle(ui.progress("Shuffling", "with the secure chip"))
     source = rand_source()
     print("shuffled by", source)
     cur, streak, state, msg = deal(), 0, "guess", "higher or lower?"
